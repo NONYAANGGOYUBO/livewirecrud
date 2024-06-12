@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todo App template</title>
+    <title>CRUD in livewire</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
@@ -26,9 +26,14 @@
         </div>
     </div>
     <div id="content" class="mx-auto" style="max-width:500px;">
+        {{-- <div> --}}
         @livewire('todolist')
     </div>
-
+    <hr>
+    {{-- <div class="text-center"> --}}
+        <div id="content" class="mx-auto" style="max-width:500px;">
+    @livewire('test2')
+</div>
 </body>
 
 </html>

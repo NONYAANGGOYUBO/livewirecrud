@@ -23,10 +23,24 @@
                     <button wire:click.prevent="create2" type="submit"
                         class="px-4 py-2 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600">Create
                         +</button>
-                    <span class="text-green-500 text-xs">Saved.</span>
 
+                     @if (session('successvariable'))
+                    <span class="text-green-500 text-xs">{{session('successvariable')}}</span>
+                    @endif
                 </form>
             </div>
         </div>
     </div>
+    <h1 class="text-red-500 font-bold">list of user name </h1> <br>
+      <h2>  @foreach ($todos as $todo )
+        {{-- @include('livewire.includes.todo-card') --}}
+        {{$todo->name}}  <br> <br>
+    @endforeach
+
+       <div class="my-2">
+           <!-- Pagination goes here -->
+           {{$todos->links()}}
+       </div>
+    </h2>
+
 </div>

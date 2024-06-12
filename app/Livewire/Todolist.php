@@ -4,9 +4,12 @@ namespace App\Livewire;
 use App\Models\Todo;
 use Livewire\Attributes\Rule;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class Todolist extends Component
 {
+    use WithPagination;
+
     #[Rule('required|min:3|max:34')]
     public $name;
 
@@ -27,10 +30,12 @@ class Todolist extends Component
 
         $this->reset('name');
 
-        session()->flash('success','created');
+        session()->flash('successvariable','user created successfully');
     }
     public function render()
     {
-        return view('livewire.todolist');
+        return view('livewire.todolist',[
+            'todos'=>Todo::latest()->paginate(3)
+    ]);
     }
 }
