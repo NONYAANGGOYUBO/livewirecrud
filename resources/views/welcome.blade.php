@@ -32,8 +32,19 @@
     <hr>
     {{-- <div class="text-center"> --}}
         <div id="content" class="mx-auto" style="max-width:500px;">
-    @livewire('test2')
+    @livewire('demo')
 </div>
+
+</div>
+<hr>
+{{-- <div class="text-center"> --}}
+    <div id="content" class="mx-auto" style="max-width:500px;">
+@livewire('student-adress')
+</div>
+
+<div id="content" class="mx-auto" style="max-width:500px;">
+    @livewire('studentphonenumber')
+    </div>
 </body>
 
 </html>
