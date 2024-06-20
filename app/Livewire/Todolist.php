@@ -35,7 +35,7 @@ class Todolist extends Component
     public function render()
     {
         return view('livewire.todolist',[
-            'todos'=>Todo::latest()->paginate(3)
+            'todos'=>Todo::latest()->paginate(10)
     ]);
     }
 }

@@ -45,6 +45,11 @@
 <div id="content" class="mx-auto" style="max-width:500px;">
     @livewire('studentphonenumber')
     </div>
+
+    <div id="content" class="mx-auto" style="max-width:500px;">
+        @livewire('volume')
+        </div>
+
 </body>
 
 </html>
