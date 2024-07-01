@@ -12,6 +12,7 @@ class Volume extends Component
         watervolume::create([
             'capacity'=>$this->ishi,
         ]);
+
         $this->reset('ishi');
     }
     public function render()
