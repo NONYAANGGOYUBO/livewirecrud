@@ -26,18 +26,18 @@
         </div>
     </div>
     <div id="content" class="mx-auto" style="max-width:500px;">
-        {{-- <div> --}}
+
         @livewire('todolist')
     </div>
-    <hr>
-    {{-- <div class="text-center"> --}}
+    {{-- <hr>
+
         <div id="content" class="mx-auto" style="max-width:500px;">
     @livewire('demo')
 </div>
 
 </div>
 <hr>
-{{-- <div class="text-center"> --}}
+
     <div id="content" class="mx-auto" style="max-width:500px;">
 @livewire('student-adress')
 </div>
@@ -48,7 +48,7 @@
 
     <div id="content" class="mx-auto" style="max-width:500px;">
         @livewire('volume')
-        </div>
+        </div> --}}
 
 </body>
 

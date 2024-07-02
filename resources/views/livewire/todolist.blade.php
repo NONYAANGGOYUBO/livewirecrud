@@ -1,6 +1,6 @@
 <div>
    @include('livewire.includes.create-todo-box')
-   @include('livewire.includes.search-box')
+   @include('livewire.includes.serach-box')
     <div id="todos-list">
      @foreach ($todos as $todo )
          @include('livewire.includes.todo-card')

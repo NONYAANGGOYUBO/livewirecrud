@@ -31,9 +31,9 @@
             </div>
         </div>
     </div>
-    <h1 class="text-red-500 font-bold">list of user name </h1> <br>
+    {{-- <h1 class="text-red-500 font-bold">list of user name </h1> <br>
       <h2>  @foreach ($todos as $todo )
-        {{-- @include('livewire.includes.todo-card') --}}
+        @include('livewire.includes.todo-card')
         {{$todo->name}}  <br> <br>
     @endforeach
 
@@ -41,6 +41,6 @@
            <!-- Pagination goes here -->
            {{$todos->links()}}
        </div>
-    </h2>
+    </h2> --}}
 
 </div>

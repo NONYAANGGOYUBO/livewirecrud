@@ -32,10 +32,15 @@ class Todolist extends Component
 
         session()->flash('successvariable','user created successfully');
     }
+
+    // delete function
+    public function delete($todoID){
+        Todo::find($todoID)->delete();
+    }
     public function render()
     {
         return view('livewire.todolist',[
-            'todos'=>Todo::latest()->paginate(5)
+            'todos'=>Todo::latest()->where('name','like',"%{$this->search}%")->paginate(3)
     ]);
     }
 }
