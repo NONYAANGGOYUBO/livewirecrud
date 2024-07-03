@@ -13,6 +13,8 @@ class Todolist extends Component
     #[Rule('required|min:3|max:34')]
     public $name;
 
+    public $status;
+
     public $search;
 
     public function create2(){
@@ -28,7 +30,7 @@ class Todolist extends Component
 
         Todo::create($validated);
 
-        $this->reset('name');
+        $this->reset('name','status');
 
         session()->flash('successvariable','user created successfully');
     }
@@ -36,6 +38,12 @@ class Todolist extends Component
     // delete function
     public function delete($todoID){
         Todo::find($todoID)->delete();
+    }
+
+    public function toggle($todoID){
+        $todos = Todo::find($todoID);
+        $todos->completed = !$todos->completed;
+        $todos->save();
     }
     public function render()
     {
