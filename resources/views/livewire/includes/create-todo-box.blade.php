@@ -24,7 +24,7 @@
                         <label for="status"
                             class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">*
                             Status </label>
-                        <input wire:model="status" type="text" id="name" placeholder="type completed"
+                        <input wire:model="status" type="text" id="status" placeholder="type completed"
                             class="bg-gray-100  text-gray-900 text-sm rounded block w-full p-2.5">
 
 
