@@ -17,6 +17,10 @@ class Todolist extends Component
 
     public $search;
 
+    public $s_id;
+
+    public $updates=false;
+
     public function create2(){
         // validate
         // create the todo
@@ -40,10 +44,20 @@ class Todolist extends Component
         Todo::find($todoID)->delete();
     }
 
-    public function toggle($todoID){
-        $todos = Todo::find($todoID);
-        $todos->completed = !$todos->completed;
-        $todos->save();
+    // public function toggle($todoID){
+    //     $todos = Todo::find($todoID);
+    //     $todos->id = !$todos->id;
+    //     $todos->save();
+    // }
+
+
+
+    public function update($id)
+    {
+        $todo = Todo::find($id);
+        $this->name=$todo->name;
+        $this->s_id=$todo->id;
+        $this->updates=true;
     }
     public function render()
     {

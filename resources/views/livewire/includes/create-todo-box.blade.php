@@ -20,7 +20,7 @@
                         @enderror
 
                     </div>
-                    <div class="mb-6">
+                    {{-- <div class="mb-6">
                         <label for="status"
                             class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">*
                             Status </label>
@@ -33,7 +33,7 @@
                         <span class="text-red-500 text-xs mt-3 block ">{{$message}}</span>
                         @enderror
 
-                    </div>
+                    </div> --}}
                     <button wire:click.prevent="create2" type="submit"
                         class="px-4 py-2 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600">Create
                         +</button>
