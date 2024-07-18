@@ -17,9 +17,11 @@ class Todolist extends Component
 
     public $search;
 
-    public $s_id;
+    public $editingtodoid;
 
-    public $updates=false;
+    #[Rule('required|min:3|max:34')]
+    public $editingtodoname;
+
 
     public function create2(){
         // validate
@@ -37,6 +39,7 @@ class Todolist extends Component
         $this->reset('name','status');
 
         session()->flash('successvariable','user created successfully');
+        $this->resetPage();
     }
 
     // delete function
@@ -44,21 +47,32 @@ class Todolist extends Component
         Todo::find($todoID)->delete();
     }
 
-    // public function toggle($todoID){
-    //     $todos = Todo::find($todoID);
-    //     $todos->id = !$todos->id;
-    //     $todos->save();
-    // }
-
-
-
-    public function update($id)
-    {
-        $todo = Todo::find($id);
-        $this->name=$todo->name;
-        $this->s_id=$todo->id;
-        $this->updates=true;
+    public function toggle($todoID){
+        $todos = Todo::find($todoID);
+        $todos->status = !$todos->status;
+        $todos->save();
     }
+
+    public function edit($todoID)
+    {
+        $this->editingtodoid= $todoID;
+        $this->editingtodoname=Todo::find($todoID)->name;
+    }
+
+    public function canceledit()
+    {
+        $this->reset('editingtodoid','editingtodoname');
+    }
+
+    public function update()
+    {
+        $this->validateOnly('editingtodoname');
+        Todo::find($this->editingtodoid)->update(['name'=>$this->editingtodoname]);
+        session()->flash('variableforupdate','user updated successfully');
+        $this->canceledit();
+
+    }
+
     public function render()
     {
         return view('livewire.todolist',[
